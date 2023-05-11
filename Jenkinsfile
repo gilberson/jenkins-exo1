@@ -7,5 +7,14 @@ pipeline {
       }
     }
 
+    stage('stage2') {
+      steps {
+        sh '''if test `grep -c jenkins /etc/passwd`-ne 0
+then
+sudo find / -user jenkins > /tmp/jenkins
+fi'''
+      }
+    }
+
   }
 }
