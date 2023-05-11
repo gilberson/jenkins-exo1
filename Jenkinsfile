@@ -16,5 +16,14 @@ fi'''
       }
     }
 
+    stage('stage3') {
+      steps {
+        sh '''for i in `cat /tmp/jenkins`
+do
+ls -il $i
+done'''
+      }
+    }
+
   }
 }
